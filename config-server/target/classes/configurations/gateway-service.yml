@@ -1,0 +1,17 @@
+server:
+  port: 8222
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: microservice1
+          uri: lb:http://MICROSERVICE1
+          predicates:
+            - Path=/api/v1/ms1/**
+        - id: microservice2
+          uri: lb:http://MICROSERVICE2
+          predicates:
+            - Path=/api/v1/ms2/**

@@ -1,0 +1,10 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: microservice1
+
+application:
+  config:
+    microservice2-url: http://localhost:8222/api/v1/ms2
+
